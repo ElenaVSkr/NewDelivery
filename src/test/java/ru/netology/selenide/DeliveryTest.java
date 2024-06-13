@@ -8,8 +8,8 @@ import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
+
 
 public class DeliveryTest {
     private String generateDate(long addDays, String pattern) {
@@ -17,7 +17,7 @@ public class DeliveryTest {
     }
 
     @Test
-     public void verification() {
+    public void verification() {
         open("http://localhost:9999");
         $("[data-test-id='city'] input").setValue("Москва");
         String date = generateDate(4, "dd.MM.yyyy");
